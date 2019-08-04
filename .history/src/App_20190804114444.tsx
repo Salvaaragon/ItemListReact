@@ -57,7 +57,7 @@ class App extends Component<{}, State> {
 				<AppBar position="static" color="primary">
 					<Toolbar>
 						<Typography variant="h4" color="inherit">
-							LISTAS CON REACT
+							<Grid></Grid>LISTAS CON REACT
 						</Typography>
 					</Toolbar>
 				</AppBar>

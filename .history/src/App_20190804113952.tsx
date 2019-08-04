@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import { Task } from './models/task';
 import { NewTaskForm } from './components/NewTaskForm';
 import { TasksList } from './components/TaskList';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+import { Typography } from '@material-ui/core';
 
 interface State {
 	newTask: Task;
@@ -54,19 +52,19 @@ class App extends Component<{}, State> {
 	render() {
 		return(
 			<div>
-				<AppBar position="static" color="primary">
+				<AppBar position="static" color="default">
 					<Toolbar>
-						<Typography variant="h4" color="inherit">
+						<Typography variant="h6" color="inherit">
 							LISTAS CON REACT
 						</Typography>
+						<NewTaskForm
+							task={this.state.newTask}
+							onAdd={this.addTask}
+							onChange={this.handleTaskChange}
+						/>
+						<TasksList tasks={this.state.tasks} onDelete={this.deleteTask}/>
 					</Toolbar>
 				</AppBar>
-				<NewTaskForm
-					task={this.state.newTask}
-					onAdd={this.addTask}
-					onChange={this.handleTaskChange}
-				/>
-				<TasksList tasks={this.state.tasks} onDelete={this.deleteTask}/>
 			</div>
 		)
 	}

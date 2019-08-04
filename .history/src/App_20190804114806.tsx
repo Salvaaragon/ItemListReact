@@ -55,7 +55,7 @@ class App extends Component<{}, State> {
 		return(
 			<div>
 				<AppBar position="static" color="primary">
-					<Toolbar>
+					<Toolbar centered>
 						<Typography variant="h4" color="inherit">
 							LISTAS CON REACT
 						</Typography>

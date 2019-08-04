@@ -54,19 +54,19 @@ class App extends Component<{}, State> {
 	render() {
 		return(
 			<div>
-				<AppBar position="static" color="primary">
+				<AppBar position="static" color="default">
 					<Toolbar>
-						<Typography variant="h4" color="inherit">
+						<Typography variant="h6" color="inherit">
 							LISTAS CON REACT
 						</Typography>
+						<NewTaskForm
+							task={this.state.newTask}
+							onAdd={this.addTask}
+							onChange={this.handleTaskChange}
+						/>
+						<TasksList tasks={this.state.tasks} onDelete={this.deleteTask}/>
 					</Toolbar>
 				</AppBar>
-				<NewTaskForm
-					task={this.state.newTask}
-					onAdd={this.addTask}
-					onChange={this.handleTaskChange}
-				/>
-				<TasksList tasks={this.state.tasks} onDelete={this.deleteTask}/>
 			</div>
 		)
 	}

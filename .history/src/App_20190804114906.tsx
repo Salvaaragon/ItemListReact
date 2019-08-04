@@ -11,6 +11,15 @@ interface State {
 	tasks: Task[];
 }
 
+const styles = {
+	root: {
+		flexGrow: 1,
+	},
+	appbar: {
+		alignItems: 'center',
+	}
+};
+
 class App extends Component<{}, State> {
 
 	private addTask = (event: React.FormEvent<HTMLFormElement>) => {

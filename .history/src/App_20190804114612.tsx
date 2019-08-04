@@ -5,10 +5,15 @@ import { TasksList } from './components/TaskList';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
 
 interface State {
 	newTask: Task;
 	tasks: Task[];
+}
+
+var centering = {
+	textAlign: "center",
 }
 
 class App extends Component<{}, State> {
@@ -57,7 +62,7 @@ class App extends Component<{}, State> {
 				<AppBar position="static" color="primary">
 					<Toolbar>
 						<Typography variant="h4" color="inherit">
-							LISTAS CON REACT
+							<Grid container spacing={3} style={centering}>LISTAS CON REACT</Grid>
 						</Typography>
 					</Toolbar>
 				</AppBar>

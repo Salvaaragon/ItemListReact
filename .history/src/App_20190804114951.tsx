@@ -11,6 +11,15 @@ interface State {
 	tasks: Task[];
 }
 
+const styles = {
+	root: {
+		flexGrow: 1,
+	},
+	appbar: {
+		alignItems: 'center',
+	}
+};
+
 class App extends Component<{}, State> {
 
 	private addTask = (event: React.FormEvent<HTMLFormElement>) => {
@@ -51,10 +60,12 @@ class App extends Component<{}, State> {
 		tasks: []
 	}
 
-	render() {
+	render(props) {
+		const { classes } = props;
+
 		return(
 			<div>
-				<AppBar position="static" color="primary">
+				<AppBar position="static" color="primary" className={classes.appbar}>
 					<Toolbar>
 						<Typography variant="h4" color="inherit">
 							LISTAS CON REACT
